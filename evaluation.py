@@ -1,4 +1,6 @@
 import torch
+import logging
+
 # import NegationDataset
 from torch.utils.data import TensorDataset
 from torch.utils.data import DataLoader
@@ -6,7 +8,10 @@ import torch.nn as nn
 from sklearn.metrics import f1_score,precision_score,recall_score,confusion_matrix
 from tabulate import tabulate
 from processor import NegationDataset
-def load_testdata(file_name):
+import numpy as np
+logger = logging.getLogger(__name__)
+
+def load_testdata(file_name,tokenizer):
     test_dataset,_ = NegationDataset.from_tsv(file_name, tokenizer)
 
     input_ids = []
@@ -27,11 +32,11 @@ def load_testdata(file_name):
     return test_dataloader
 
 
-def predict(target_trainable_net,test_file,output_test_file,threshold = 0.5):
+def predict(target_trainable_net,tokenizer,test_file,output_test_file,threshold = 0.5):
   # target_trainable_net = 
   # tokenizer =
   start=True
-  test_dataloader = load_testdata(test_file)
+  test_dataloader = load_testdata(test_file,tokenizer)
   for data in test_dataloader:
     # out = fixed_source_net(data[0].cuda(),data[1].cuda())
     out = target_trainable_net(data[0].cuda(),data[1].cuda())

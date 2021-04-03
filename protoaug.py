@@ -12,11 +12,11 @@ from evaluation import score_negation, predict
 
 if __name__ == '__main__' :
     
-    # model_name = "tmills/roberta_sfda_sharpseed"
-    model_name = "model/"
+    model_name = "tmills/roberta_sfda_sharpseed"
+    # model_name = "model/"
     train_dir = "drive/My Drive/Team6/sfda/negation/practice_text/train.tsv"
 
-    test_dir = "drive/My Drive/Team6/sfda/negation/practice_text/dev.tsv"
+    test_dir = 'dev.tsv'#"drive/My Drive/Team6/sfda/negation/practice_text/dev.tsv"
 
     # idx, y_true_ = get_top_points_idx(model_dir= model_name, dataset_dir= train_dir)
     
@@ -62,8 +62,9 @@ if __name__ == '__main__' :
     # model.save_pretrained('model/')
     # tokenizer.save_pretrained('model/')
 
-    predict(model,test_dir, "out.tsv")
-    score_negation( "drive/My Drive/Team6/sfda/negation/practice_text/dev_labels.txt", "out.tsv")
+    predict(model,tokenizer,test_dir, "out.tsv")
+    # "drive/My Drive/Team6/sfda/negation/practice_text/dev_labels.txt"
+    score_negation( 'ref.tsv', "out.tsv")
 
 
 
