@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 import torch.nn as nn
 from sklearn.metrics import f1_score,precision_score,recall_score,confusion_matrix
 from tabulate import tabulate
-from processor import NegationDataset
+from .processor import NegationDataset
 import numpy as np
 logger = logging.getLogger(__name__)
 

@@ -69,9 +69,3 @@ if __name__ == '__main__' :
         predict(model,tokenizer,test_path, res_pred)
         # # "drive/My Drive/Team6/sfda/negation/practice_text/dev_labels.txt"
         score_negation( ref_pred, res_pred)
-
-
-
-    
-
-    

@@ -3,7 +3,7 @@ import torch
 import random 
 import numpy as np
 import torch.nn.functional as F
-from processor import NegationDataset
+from .processor import NegationDataset
 import math
 import time
 import torch.optim as optim
