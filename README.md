@@ -72,7 +72,7 @@ simple LeNet-type networks.
 
 Have a look into `main.py` for all possible arguments and options.
 
-### Running Adapt-ProtoAUG
+## Running Adapt-ProtoAUG
 ```
 cd <path-to-Deep-SVDD-PyTorch-directory>
 
