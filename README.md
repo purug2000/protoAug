@@ -63,6 +63,13 @@ source activate myenv
 while read requirement; do conda install -n myenv --yes $requirement; done < requirements.txt
 ```
 
+## Dataset Preparation
+
+Since the competition uses sensitive medical data, the data used for this project is not easily available. Please use the 
+following links to obtain the required data:
+
+* Competetition Codalab Page ([https://competitions.codalab.org/competitions/26152](https://competitions.codalab.org/competitions/26152))
+* Organisers' github repo ([https://github.com/Machine-Learning-for-Medical-Language/source-free-domain-adaptation](https://github.com/Machine-Learning-for-Medical-Language/source-free-domain-adaptation))
 
 ## Running ProtoAUG
 
