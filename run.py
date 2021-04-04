@@ -42,9 +42,6 @@ if __name__ == '__main__' :
     batch_size = args.batch_size
     do_predict = args.do_predict
     thresh_range = args.thresh_range
-
-    print(args)
-    exit()
     
     config = AutoConfig.from_pretrained(model_name,output_hidden_states=True)
     tokenizer = AutoTokenizer.from_pretrained(model_name,
