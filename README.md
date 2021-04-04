@@ -66,7 +66,7 @@ python3 run.py -h
 ### Running ProtoAUG
 To run *ProtoAUG*, set --adaptive to False:
 ```
-python3 run.py --adaptive False --batch_size 16 --do_predict True --extra_aug 3 --max_epoch 5 --model_name "tmills/roberta_sfda_sharpseed" --model_save_dir "model/" --ref_pred "drive/My Drive/Team6/sfda/negation/practice_text/dev_labels.txt" --res_pred "out.tsv" --test_path "drive/My Drive/Team6/sfda/negation/practice_text/dev.tsv" --thresh_range 0.2 --threshold 0.5 --train_path "drive/My Drive/Team6/sfda/negation/practice_text/train.tsv" 
+python3 run.py --adaptive False --batch_size 16 --do_predict True --extra_aug 3 --max_epoch 5 --model_name "tmills/roberta_sfda_sharpseed" --model_save_dir "model/" --ref_pred "drive/My Drive/Team6/sfda/negation/practice_text/dev_labels.txt" --res_pred "out.tsv" --test_path "drive/My Drive/Team6/sfda/negation/practice_text/dev.tsv" --threshold 0.5 --train_path "drive/My Drive/Team6/sfda/negation/practice_text/train.tsv" 
 ```
 
 ### Running Adapt-ProtoAUG
