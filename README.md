@@ -4,7 +4,8 @@ SemEval 2021 paper ”IITK at SemEval-2021 Task 10: Source-Free Unsupervised Dom
 
 
 ## Citation and Contact
-You can find a PDF of the paper at 
+To be added
+<!-- You can find a PDF of the paper at 
 [http://proceedings.mlr.press/v80/ruff18a.html](http://proceedings.mlr.press/v80/ruff18a.html).
 
 If you use our work, please also cite the paper:
@@ -17,9 +18,9 @@ If you use our work, please also cite the paper:
   year      = {2018},
   volume    = {80},
 }
-```
-
-If you would like to get in touch, please contact [contact@lukasruff.com](mailto:contact@lukasruff.com).
+``` -->
+<!-- 
+If you would like to get in touch, please contact [contact@lukasruff.com](mailto:contact@lukasruff.com). -->
 
 
 ## Abstract
@@ -41,26 +42,11 @@ This code is written in `Python 3.7` and requires the packages listed in `requir
 
 Clone the repository to your local machine and directory of choice:
 ```
-git clone https://github.com/lukasruff/Deep-SVDD-PyTorch.git
+git clone https://github.com/purug2000/protoAug.git
 ```
-
-To run the code, we recommend setting up a virtual environment, e.g. using `virtualenv` or `conda`:
-
-### `virtualenv`
+Install the required libraries/packages using:
 ```
-# pip install virtualenv
-cd <path-to-Deep-SVDD-PyTorch-directory>
-virtualenv myenv
-source myenv/bin/activate
 pip install -r requirements.txt
-```
-
-### `conda`
-```
-cd <path-to-Deep-SVDD-PyTorch-directory>
-conda create --name myenv
-source activate myenv
-while read requirement; do conda install -n myenv --yes $requirement; done < requirements.txt
 ```
 
 ## Dataset Preparation
@@ -71,29 +57,20 @@ following links to obtain the required data:
 * Competetition Codalab Page ([https://competitions.codalab.org/competitions/26152](https://competitions.codalab.org/competitions/26152))
 * Organisers' github repo ([https://github.com/Machine-Learning-for-Medical-Language/source-free-domain-adaptation](https://github.com/Machine-Learning-for-Medical-Language/source-free-domain-adaptation))
 
-## Running ProtoAUG
-
-We currently have implemented the MNIST ([http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)) and 
-CIFAR-10 ([https://www.cs.toronto.edu/~kriz/cifar.html](https://www.cs.toronto.edu/~kriz/cifar.html)) datasets and 
-simple LeNet-type networks.
-
-Have a look into `main.py` for all possible arguments and options.
-
-## Running Adapt-ProtoAUG
+## Running the experiments
+To get help regarding any of the parameters, use:
 ```
-cd <path-to-Deep-SVDD-PyTorch-directory>
-
-# activate virtual environment
-source myenv/bin/activate  # or 'source activate myenv' for conda
-
-# create folder for experimental output
-mkdir log/mnist_test
-
-# change to source directory
-cd src
-
-# run experiment
-python main.py mnist mnist_LeNet ../log/mnist_test ../data --objective one-class --lr 0.0001 --n_epochs 150 --lr_milestone 50 --batch_size 200 --weight_decay 0.5e-6 --pretrain True --ae_lr 0.0001 --ae_n_epochs 150 --ae_lr_milestone 50 --ae_batch_size 200 --ae_weight_decay 0.5e-3 --normal_class 3;
+python3 run.py -h
 ```
-This example trains a One-Class Deep SVDD model where digit 3 (`--normal_class 3`) is considered to be the normal class. Autoencoder
-pretraining is used for parameter initialization.
+
+### Running ProtoAUG
+To run *ProtoAUG*, set --adaptive to False:
+```
+python3 run.py --adaptive False --batch_size 16 --do_predict True --extra_aug 3 --max_epoch 5 --model_name "tmills/roberta_sfda_sharpseed" --model_save_dir "model/" --ref_pred "drive/My Drive/Team6/sfda/negation/practice_text/dev_labels.txt" --res_pred "out.tsv" --test_path "drive/My Drive/Team6/sfda/negation/practice_text/dev.tsv" --thresh_range 0.2 --threshold 0.5 --train_path "drive/My Drive/Team6/sfda/negation/practice_text/train.tsv" 
+```
+
+### Running Adapt-ProtoAUG
+To run *Adapt-ProtoAUG*, set --adaptive to True:
+```
+python3 run.py --adaptive True --batch_size 16 --do_predict True --extra_aug 3 --max_epoch 5 --model_name "tmills/roberta_sfda_sharpseed" --model_save_dir "model/" --ref_pred "drive/My Drive/Team6/sfda/negation/practice_text/dev_labels.txt" --res_pred "out.tsv" --test_path "drive/My Drive/Team6/sfda/negation/practice_text/dev.tsv" --thresh_range 0.2 --threshold 0.5 --train_path "drive/My Drive/Team6/sfda/negation/practice_text/train.tsv" 
+```
