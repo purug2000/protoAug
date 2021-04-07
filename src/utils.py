@@ -124,6 +124,9 @@ def lr_scheduler(optimizer, iter_num, max_iter, gamma=10, power=0.75):
     return optimizer
 
 def tensor_l2normalization(q):
+	'''
+	This function has been copied from https://github.com/youngryan1993/PrDA-Progressive-Domain-Adaptation-from-a-Source-Pre-trained-Model/blob/master/lib.py
+	'''
     qn = torch.norm(q, p=2, dim=1).detach().unsqueeze(1)
     q = q.div(qn.expand_as(q))
     return q
