@@ -4,21 +4,30 @@ SemEval 2021 paper ”IITK at SemEval-2021 Task 10: Source-Free Unsupervised Dom
 
 
 ## Citation and Contact
-To be added
-<!-- You can find a PDF of the paper at 
-[http://proceedings.mlr.press/v80/ruff18a.html](http://proceedings.mlr.press/v80/ruff18a.html).
+You can find the paper at 
+[https://aclanthology.org/2021.semeval-1.53/](https://aclanthology.org/2021.semeval-1.53/).
 
 If you use our work, please also cite the paper:
 ```
-@InProceedings{pmlr-v80-ruff18a,
-  title     = {Deep One-Class Classification},
-  author    = {Ruff, Lukas and Vandermeulen, Robert A. and G{\"o}rnitz, Nico and Deecke, Lucas and Siddiqui, Shoaib A. and Binder, Alexander and M{\"u}ller, Emmanuel and Kloft, Marius},
-  booktitle = {Proceedings of the 35th International Conference on Machine Learning},
-  pages     = {4393--4402},
-  year      = {2018},
-  volume    = {80},
+@inproceedings{kumar-etal-2021-iitk,
+    title = "{IITK} at {S}em{E}val-2021 Task 10: Source-Free Unsupervised Domain Adaptation using Class Prototypes",
+    author = "Kumar, Harshit  and
+      Shah, Jinang  and
+      Hegde, Nidhi  and
+      Gupta, Priyanshu  and
+      Jindal, Vaibhav  and
+      Modi, Ashutosh",
+    booktitle = "Proceedings of the 15th International Workshop on Semantic Evaluation (SemEval-2021)",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.semeval-1.53",
+    doi = "10.18653/v1/2021.semeval-1.53",
+    pages = "438--444",
+    abstract = "Recent progress in deep learning has primarily been fueled by the availability of large amounts of annotated data that is obtained from highly expensive manual annotating pro-cesses. To tackle this issue of availability of annotated data, a lot of research has been done on unsupervised domain adaptation that tries to generate systems for an unlabelled target domain data, given labeled source domain data. However, the availability of annotated or labelled source domain dataset can{'}t always be guaranteed because of data-privacy issues. This is especially the case with medical data, as it may contain sensitive information of the patients. Source-free domain adaptation (SFDA) aims to resolve this issue by us-ing models trained on the source data instead of using the original annotated source data. In this work, we try to build SFDA systems for semantic processing by specifically focusing on the negation detection subtask of the SemEval2021 Task 10. We propose two approaches -ProtoAUGandAdapt-ProtoAUGthat use the idea of self-entropy to choose reliable and high confidence samples, which are then used for data augmentation and subsequent training of the models. Our methods report an improvement of up to 7{\%} in F1 score over the baseline for the Negation Detection subtask.",
 }
-``` -->
+```
 <!-- 
 If you would like to get in touch, please contact [contact@lukasruff.com](mailto:contact@lukasruff.com). -->
 
